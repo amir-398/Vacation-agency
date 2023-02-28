@@ -1,0 +1,310 @@
+@import "./libs/constants.scss";
+
+%position {
+    position : relative;
+    z-index : 1;
+}
+
+%btn {
+    padding: 8px 30px;
+    border-radius: 20px;
+}
+body {
+    font-family: sans-serif;
+    
+}
+
+
+#navbarNav > ul > li  {
+    margin-right: 20px;
+    &:hover {
+        transform: translateY(-5px);
+        animation: .1s;
+    }
+}
+.main-container {
+    min-height: 100vh;
+    position: relative;
+    background-image : url("./assets/pics/bck.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+.overlay{
+    position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        opacity: 0.5;
+        z-index: 0;
+}
+
+.main {
+    @extend %position;
+    margin-top: 8%;
+    margin-bottom: 5rem;
+    h1 {
+        color: $text-color;
+        font-size: 50px;
+        font-weight: 800;
+        animation : 2s ease-in forwards;
+        animation-name: title;
+    }
+    @keyframes title {
+        0% {
+            opacity: 0;
+            transform: translateY(-100px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    h4 {
+        font-weight: 500;
+        color: $text-color;
+        margin: 3rem 0;
+        padding: 0 300px;
+    }
+    
+}
+%btn-hover {
+    &:hover {
+        transform: scale(1.1);
+        background-color: darken($primary-color, 10%);
+    }
+}
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    button {
+        @extend %btn;
+        color: $text-color;
+        text-transform: uppercase;
+        &:first-child{
+           background-color: $primary-color;
+           border: none;
+            @extend %btn-hover;
+        }
+        &:last-child{
+            @extend %btn-hover;
+            background-color: transparent;
+            border: 2px solid white;
+            &:hover {
+                background-color: rgba(0,0,0,0.5)
+            }
+        }
+    }
+}
+
+//main icons
+.type-container  {
+    max-width: 70rem;
+    
+    div {
+        text-align: center;
+        width: 25%
+    }
+   @extend %position;
+    img{
+    width:4rem;
+    height: 4rem;
+    }
+    p {
+        color: $text-color;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 20px 0;
+    }
+}
+
+/* second div info page */
+.infoPage {
+    height: fit-content;
+    padding: 2rem 10rem
+}
+.infoPage-left{
+    margin: 0;
+    padding: 0;
+}
+.infoPage-right {
+    img{
+        
+        display:block ;
+        margin: 0 auto;
+    }
+}
+.left-top{
+    max-height: 50%;
+    width: 100%;
+    h2{
+        font-size: 4rem;
+    }
+    p {
+        margin : 1rem 0;
+        font-size: 1.2rem;
+    }
+    button {
+      
+        @extend %btn;
+        padding: 15px 40px;
+        border-radius: 30px;
+        background-color: $primary-color;
+        border: none;
+        color: $text-color;
+        text-transform: uppercase;
+        @extend %btn-hover;
+    }
+}
+.left-bottom{
+    margin-top: 2rem;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    
+    .wrap-image {
+        width: 100%;
+        display: flex;
+        gap: 30px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
+    img{
+      display: block;
+      margin: 0;
+      padding: 0;
+      width: 28%;
+      height: 170px;
+      transition: transform .3s ease-in-out;
+      box-shadow: 0px 0px 10px 1px black;   
+         &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+// 
+ /*responsive ---------------------------*/
+@media screen and (max-width: 1251px) {
+    .main {
+        h1 {
+            font-size: 40px;
+        }
+        h4 {
+            padding: 0 50px;
+        }
+    }
+    //main icons 
+    .type-container  {
+        p {          
+            font-size: 1rem;
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    .main {
+        h1 {
+            font-size: 30px;
+        }   
+    }
+    //main icons 
+    .type-container  {
+        p {    
+            font-size: .9rem;   
+        }
+    }
+
+    .infoPage-right{
+        display: block;
+        width: 100%;
+        
+    }
+    .infoPage {
+        display: flex;
+        flex-direction: column;
+       align-items: center;
+
+    }
+    .left-bottom{
+        margin-bottom: 2rem;
+    }
+    .wrap-image{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+    }
+    .left-bottom  img{
+       width: 100%;
+        height: 15rem;
+        background-color: blue;
+    }
+    .left-top > button {
+        margin-bottom: 2rem;
+    }
+    
+}
+@media screen and (max-width: 768px) {
+    .main {
+        margin-top: 30%;
+        margin-bottom: 0;
+        h1 {
+            font-size: 25px;
+        }
+        h4 {
+            padding: 0 20px;
+            margin: 2rem 0;
+        }
+    }
+    //bouton home 
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+button{
+    width: fit-content;
+    align-self: center;
+}
+       
+    }
+    //main icons 
+    .type-container  {
+        p {    
+            font-size: .7rem;   
+        }
+    }
+.type-container{
+    max-width: 100%;
+    div{
+        width: 50%;
+    }
+}
+.infoPage{
+    margin-top: 2rem;
+    padding: 0 3rem;
+}
+.left-top{
+    margin: 0;
+    padding: 0;
+    h2 {
+        font-size: 2.4rem;
+    }
+}
+.wrap-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.left-bottom  img{
+   width: 100%;
+    height: 15rem;
+    background-color: blue;
+}
+.left-top > button {
+    margin-bottom: 2rem;
+}
+.infoPage-right {
+    img {
+        width: 100%;
+        margin-top: 2rem;
+    }
+}
+}
