@@ -1,14 +1,11 @@
 @import "./libs/constants.scss";
-
+@import "./libs/btn.scss";
 %position {
     position : relative;
     z-index : 1;
 }
 
-%btn {
-    padding: 8px 30px;
-    border-radius: 20px;
-}
+
 body {
     font-family: sans-serif;
     
@@ -67,12 +64,7 @@ body {
     }
     
 }
-%btn-hover {
-    &:hover {
-        transform: scale(1.1);
-        background-color: darken($primary-color, 10%);
-    }
-}
+
 .btn-container {
     display: flex;
     justify-content: center;
