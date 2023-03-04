@@ -1,0 +1,145 @@
+@import "../../libs/constants.scss";
+@import "../../libs/btn.scss";
+@import "../../libs/navbar_glass.scss";
+body {
+    margin: 0;
+    padding: 0;
+}
+#navbarNav > ul > li  {
+    margin-right: 20px;
+    &:hover {
+        transform: translateY(-5px);
+        animation: .1s;
+    }
+}
+.logo {
+    width: 50px;
+    height: 50px;
+}
+.main-container {
+   height: 75vh;
+   background: url("../../assets/pics/friends.jpg") no-repeat;
+   background-size : cover;
+   display: flex;
+   justify-content: center;
+    align-items: center;
+    h1 {
+     color: white;
+     font-size: 7rem;
+     margin-bottom: 10rem;
+     z-index: 2;
+    }
+}
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    background-color: rgba(0,0,0,0.6);
+    opacity: 0.5;
+    z-index: 1;
+}
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+.card {
+    width: 18rem;
+    @extend %glass;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.18); 
+    box-shadow: 0px 8px 32px 0 rgba(0,0,0,0.37);
+    h5 {
+        color: white;
+    }
+    p {
+        color : white
+    }
+    a{
+        background-color: $primary-color;
+        border: none;
+        @extend %btn;
+        @extend %btn-hover;
+    }
+    
+}
+.glass {
+   @extend %glass
+}
+/*-----------------responsive  ---------------------*/
+@media screen and (max-width:1308px){
+.card {
+    width: 17rem;
+}
+}
+@media screen and (max-width:1237px){
+.card {
+    width: 16rem;
+}
+}
+@media screen and (max-width:1166px){
+.card {
+    width: 15rem;
+}
+}
+@media screen and (max-width:1096px){
+.card {
+    width: 14rem;
+}
+}
+@media screen and (max-width:1024px){
+    .main-container{
+        h1{
+            font-size: 5rem;
+           
+        }
+        
+    }
+.card {
+    width: 13rem; 
+}
+}
+@media screen and (max-width: 768px){
+    .logo {
+        width: 35px;
+        height: 35px;
+    }
+    .main-container{
+        height: 60vh;
+        h1{
+            font-size: 4rem;
+            margin-bottom: 6rem;
+        }
+        
+    }
+    .card {
+        width:18rem;
+    }
+    .overlay {
+height: 300%;
+    }
+.cards-container {
+  top: 63rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+}
+@media screen and (max-width: 390px){
+.main-container{
+    h1 {
+        font-size: 3.2rem;
+        margin-bottom: 4rem;
+    }
+}
+}

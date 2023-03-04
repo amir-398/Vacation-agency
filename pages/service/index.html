@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Service</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+        <div class="container">
+          <a href="../../index.html" class="navbar-brand"><img class="logo" src="../../assets/logo/LOGO.png" alt=""></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item" 
+              >
+                <a href="../../index.html" class="nav-link text-white">Accueil</a>
+              </li>
+              <li class="nav-item"
+              >
+                <a href="../../index.html" class="nav-link text-white about">A propos</a>
+              </li>
+              <li class="nav-item" 
+              >
+                <a href="#" class="nav-link text-white">Services</a>
+              </li>
+              <li class="nav-item">
+                <a href="../contact/contact.html" class="nav-link text-white">Contact</a>
+              </li>
+            </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="container-fluid main-container">
+      <h1>Nos services</h1>
+    </div>
+    <div class="cards-container">
+      <div class="card" >
+        <img
+          class="card-img-top p-2"
+          style="border-radius: 20px"
+          src="../../assets/pics/woman-navigating.jpg"
+          alt="femme avec une carte"
+        />
+        <div class="card-body">
+          <h5 class="card-title text-center">Activités sportives</h5>
+          <p class="card-text text-center">
+            
+Venez découvrir les différentes activités sportives qui pourront vous inspirer et rêver. 
+
+          </p>
+          <div class="d-flex justify-content-center">
+            <a href="../erreur/404.html" class="btn btn-primary">Lire la suite... </a>
+          </div>
+        </div>
+      </div>
+      <div class="card" >
+        <img
+          class="card-img-top p-2"
+          style="border-radius: 20px"
+          src="../../assets/pics/attractive-girl-with-cup-her-hand-sits-log-warms-herself-near-fire-forest.jpg"
+          alt="femme assise pret d'un feu"
+        />
+        <div class="card-body">
+          <h5 class="card-title text-center">Accès Internet</h5>
+          <p class="card-text text-center">
+            Au camping, l’internet sera de faible connexion. L’équipe a mis en place un hall pour avoir une meilleure connexion possible.
+          </p>
+          <div class="d-flex justify-content-center">
+            <a href="../erreur/404.html" class="btn btn-primary">Lire la suite... </a>
+          </div>
+        </div>
+      </div>
+      <div class="card" >
+        <img
+          class="card-img-top p-2"
+          style="border-radius: 20px"
+          src="../../assets/pics/woman-holds-camping-mug-hike-trip-iceland.jpg"
+          alt="femme qui porte un mug"
+        />
+        <div class="card-body">
+          <h5 class="card-title text-center">Moniteur d'escalade</h5>
+          <p class="card-text text-center">
+            Un moniteur d’escalade est expérimenté dans plusieurs domaines depuis 6 ans. Ses activités sont accessibles à tous les niveaux. 
+          </p>
+          <div class="d-flex justify-content-center">
+            <a href="../erreur/404.html" class="btn btn-primary">Lire la suite... </a>
+          </div>
+        </div>
+      </div>
+      <div class="card" >
+        <img
+          class="card-img-top p-2"
+          style="border-radius: 20px"
+          src="../../assets/pics/young-guy.jpg"
+          alt="un mec sur une montagne"
+        />
+        <div class="card-body">
+          <h5 class="card-title text-center">Vélo de montagne</h5>
+          <p class="card-text text-center">
+            Venez découvrir avec notre guide la montagne qui se situe aux alentours du camping. 
+          </p>
+          <div class="d-flex justify-content-center">
+            <a href="../erreur/404.html" class="btn btn-primary">Lire la suite... </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="overlay"></div>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+   <script type="text/javascript">
+    let nav = document.querySelector('nav');
+    
+  let toggler = document.querySelector(".navbar-toggler");
+  toggler.addEventListener("click", ()=>{
+     
+    nav.classList.add('glass');
+  })
+    window.addEventListener('scroll', function () {
+      
+      if(window.pageYOffset <= 100){
+    toggler.addEventListener("click", ()=>{
+      console.log("je click");
+    nav.classList.add('glass');
+  });
+  }
+      if (window.pageYOffset > 100) {
+        nav.classList.add('glass', 'shadow');
+      } else {
+        nav.classList.remove('glass', 'shadow');
+      }
+    });
+  </script>
+  </body>
+</html>

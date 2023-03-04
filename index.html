@@ -17,7 +17,7 @@
     <header>
       <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
         <div class="container">
-          <a href="#" class="navbar-brand">webzone</a>
+          <a href="#" class="navbar-brand"><img class="logo" src="../../assets/logo/LOGO.png" alt=""></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -37,14 +37,14 @@
               </li>
               <li class="nav-item"
               >
-                <a href="#" class="nav-link text-white">A propos</a>
+                <a href="#a_propos" class="nav-link text-white about">A propos</a>
               </li>
               <li class="nav-item" 
               >
-                <a href="#" class="nav-link text-white">Services</a>
+                <a href="./pages/service/index.html" class="nav-link text-white">Services</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link text-white">Contact</a>
+                <a href="./pages/contact/contact.html" class="nav-link text-white">Contact</a>
               </li>
             </ul>
         </div>
@@ -58,13 +58,12 @@
       <div class="container-sm text-center main">
         <h1>Meilleur camping dans le parc national</h1>
         <h4 class="fs-6">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, eos
-          libero expedita hic voluptates suscipit, voluptatibus amet, quisquam
-          deleniti sint laboriosam
+          Bienvenue dans le camping de vos rêves. Nous sommes ravis de vous accueillir et notre équipe est disponible 7j/7 et 24h/24 pour répondre à toutes vos demandes.
+          
         </h4>
         <div class=" container-sm btn-container">
-          <button>Notre histoire</button>
-          <button><a href="./pages/contact.html"> Nous contacter</a></button>
+          <a href="./pages/service/index.html">Nos services</a>
+          <a href="./pages/contact/contact.html">Nous contacter</a>
         </div>
       </div>
       <div class="row mt-5 container- type-container">
@@ -86,12 +85,14 @@
         </div>
       </div>
     </div>
-  <div class=" container-fluid row infoPage">
+  <div id="a_propos" class=" container-fluid row infoPage">
     <div class="col-md-6 col infoPage-left">
       <div class="col-md-6 left-top">
         <h2>10 Tours de camping incroyables</h2>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <button>APPRENDRE ENCORE PLUS</button>
+        <p>Vous recherchez un meilleur endroit de rêve où camper. 
+          Cliquez ci-dessous pour vous inspirer et réaliser votre rêve. 
+          </p>
+        <a href="./pages/erreur/404.html"><button>APPRENDRE ENCORE PLUS</button></a>
        
       </div>
       <div class=" col-md-6 left-bottom">
@@ -109,5 +110,29 @@
       <img src="./assets/pics/right.png" alt="">
     </div>
   </div>
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+   <script type="text/javascript">
+    let nav = document.querySelector('nav');
+    
+  let toggler = document.querySelector(".navbar-toggler");
+  toggler.addEventListener("click", ()=>{
+      console.log("je click");
+    nav.classList.add('glass');
+  })
+    window.addEventListener('scroll', function () {
+      
+      if(window.pageYOffset <= 100){
+    toggler.addEventListener("click", ()=>{
+      console.log("je click");
+    nav.classList.add('glass');
+  });
+  }
+      if (window.pageYOffset > 100) {
+        nav.classList.add('glass', 'shadow');
+      } else {
+        nav.classList.remove('glass', 'shadow');
+      }
+    });
+  </script>
   </body>
 </html>

@@ -1,3 +1,4 @@
+@import "constants.scss";
 %btn {
     padding: 10px 30px;
     border-radius: 5px;
@@ -5,6 +6,6 @@
 %btn-hover {
     &:hover {
         transform: scale(1.1);
-        background-color: darken($primary-color, 10%);
+        background-color: darken($primary-color , 10%);
     }
 }
